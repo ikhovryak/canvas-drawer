@@ -17,7 +17,12 @@ ppm_image::ppm_image(int width, int height) : myWidth(width), myHeight(height)
 
 ppm_image::ppm_image(const ppm_image& orig)
 {
-    cout << "not implemented\n";
+    if (&orig != this) // protect against self-assignment
+    {
+        this->myHeight = orig.height();
+        this->myWidth = orig.width();
+        this->myData = orig.myData;
+    }
 }
 
 ppm_image& ppm_image::operator=(const ppm_image& orig)
@@ -27,13 +32,15 @@ ppm_image& ppm_image::operator=(const ppm_image& orig)
         return *this;
     }
 
-    cout << "not implemented\n";
+    this->myHeight = orig.height();
+    this->myWidth = orig.width();
+    this->myData = orig.myData;
     return *this;
 }
 
 ppm_image::~ppm_image()
 {
-    delete[] myData;
+    //delete[] myData;
 }
 
 bool ppm_image::save(const std::string& filename) const

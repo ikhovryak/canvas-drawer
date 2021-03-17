@@ -2,11 +2,21 @@
 #define canvas_H_
 
 #include <string>
-#include <vector>
+//#include <vector>
 #include "ppm_image.h"
+#include <list> 
+#include <iostream>
+#include <queue> 
 
 namespace agl
 {
+    struct v
+    {
+        int x;
+        int y;
+        ppm_pixel color;
+    };
+
    enum PrimitiveType {UNDEFINED, LINES, TRIANGLES};
    class canvas
    {
@@ -39,12 +49,18 @@ namespace agl
 
       // Fill the canvas with the given background color
       void background(unsigned char r, unsigned char g, unsigned char b);
+      void draw_line(v a, v b);
+      //void draw_triangle(v v1, v v2, v v3);
 
    private:
       ppm_image _canvas;
+      ppm_pixel cur_color;
+      ppm_pixel bg_color;
+      PrimitiveType shape;
+      std::list<v> vertices;
+
    };
 }
 
 #endif
-
 

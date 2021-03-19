@@ -168,7 +168,7 @@ void canvas::draw_lineHigh(v a, v b)
 		unsigned char green = a.color.g * (1 - t) + b.color.g * t;
 		unsigned char blue = a.color.b * (1 - t) + b.color.b * t;
 		ppm_pixel new_color = ppm_pixel{ red , green, blue };
-		_canvas.set(y, x, get_overlay(cur_color, y, x)); // HAD TO SWAP
+		_canvas.set(y, x, get_overlay(new_color, y, x)); // HAD TO SWAP
 		if (F > 0) {
 			x+=adder;
 			F += 2 * (W - H);

@@ -34,7 +34,7 @@ int main(int argc, char** argv)
    drawer.color(255, 0, 255);
    drawer.vertex(0, 0);
    drawer.color(0, 255, 255);
-   drawer.vertex(100, 100);
+   drawer.vertex(99, 99);
    drawer.end();
    drawer.save("line-color-interpolation.png");
 

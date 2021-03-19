@@ -56,7 +56,7 @@ Works by using modified versions of Bresenham’s Line algorithm
 
 ![Combined functions](images/diagonal-line-1.png)
 ![Combined functions](images/diagonal-line-2.png)
-![Combined functions](images/line-color-interpolation.png)
+![Combined functions](images/line-color-interpolations.png)
 ![Combined functions](images/horizontal-line.png)
 ![Combined functions](images/vertical-line.png)
 

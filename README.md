@@ -1,8 +1,14 @@
 # canvas-drawer
 
-Implements a simple drawing api
+Using Barycentric coordinates and Bresenham’s Line algorithm to implement a simple drawing api with a canvas and following functions:
+- draw a line between points a and b with color interpolation between vertices
+- draw a triangle given three points with color interpolation between vertices
+- turn alpha blend mode on and off for figures with a given alpha
+- draw a rectangle with a given center, width, and height
+- draw a point
+ 
+![Combined functions](images/myart.png)
 
-TODO: Add a representative image for your project here
 
 ## How to build
 
@@ -45,8 +51,40 @@ canvas-drawer/build $ ../bin/draw_art
 
 ## Supported primitives
 
-TODO: Document the custom primitives supported by your canvas class
+###Draw a line
+Works by using modified versions of Bresenham’s Line algorithm
 
-## Results
+![Combined functions](images/diagonal-line-1.png)
+![Combined functions](images/diagonal-line-2.png)
+![Combined functions](images/line-color-interpolation.png)
+![Combined functions](images/horizontal-line.png)
+![Combined functions](images/vertical-line.png)
 
-TODO: Show artworks using your class
+![Combined functions](images/h-lessthan-w-line-1.png)
+![Combined functions](images/h-lessthan-w-line-2.png)
+![Combined functions](images/w-lessthan-h-line-1.png)
+![Combined functions](images/w-lessthan-h-line-2.png)
+
+###Draw a triangle
+Works by using Barycentric coordinate system for both drawing and interpolation. 
+
+![Combined functions](images/triangle.png)
+![Combined functions](images/quad.png)
+
+###Draw a rectangle
+
+![Combined functions](images/rectange.png)
+
+###Draw a point
+
+![Combined functions](images/points.png)
+
+###Add opacity to figures
+Works by turning on and off the alpha blend mode while adding new figures.
+
+![Combined functions](images/triangle.png)
+![Combined functions](images/overlay.png)
+
+## Final Result
+
+![Combined functions](images/myart.png)

@@ -17,7 +17,7 @@ namespace agl
         ppm_pixel color;
     };
 
-   enum PrimitiveType {UNDEFINED, LINES, TRIANGLES};
+   enum PrimitiveType {UNDEFINED, LINES, TRIANGLES, RECTANGLES, POINTS};
    class canvas
    {
    public:
@@ -46,10 +46,19 @@ namespace agl
 
       // Specify a color. Color components are in range [0,255]
       void color(unsigned char r, unsigned char g, unsigned char b);
-
+      void rect_width_height(int width, int height);
       // Fill the canvas with the given background color
       void background(unsigned char r, unsigned char g, unsigned char b);
       void draw_line(v a, v b);
+      void draw_lineLow(v a, v b);
+      void draw_lineHigh(v a, v b);
+      void draw_rectangle(v center);
+      void draw_triangle(v a, v b, v c);
+      void draw_point(v a);
+      void start_alpha_blend(float alpha);
+      void stop_alpha_blend();
+      ppm_pixel get_overlay(ppm_pixel a, int y, int x);
+
       //void draw_triangle(v v1, v v2, v v3);
 
    private:
@@ -58,7 +67,10 @@ namespace agl
       ppm_pixel bg_color;
       PrimitiveType shape;
       std::list<v> vertices;
-
+      int rect_width;
+      int rect_height;
+      bool alpha_blend;
+      float alpha;
    };
 }
 

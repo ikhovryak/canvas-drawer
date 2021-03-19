@@ -51,7 +51,7 @@ canvas-drawer/build $ ../bin/draw_art
 
 ## Supported primitives
 
-###Draw a line
+### Draw a line
 Works by using modified versions of Bresenham’s Line algorithm
 
 ![Combined functions](images/diagonal-line-1.png)
@@ -65,21 +65,21 @@ Works by using modified versions of Bresenham’s Line algorithm
 ![Combined functions](images/w-lessthan-h-line-1.png)
 ![Combined functions](images/w-lessthan-h-line-2.png)
 
-###Draw a triangle
+### Draw a triangle
 Works by using Barycentric coordinate system for both drawing and interpolation. 
 
 ![Combined functions](images/triangle.png)
 ![Combined functions](images/quad.png)
 
-###Draw a rectangle
+### Draw a rectangle
 
 ![Combined functions](images/rectange.png)
 
-###Draw a point
+### Draw a point
 
 ![Combined functions](images/points.png)
 
-###Add opacity to figures
+### Add opacity to figures
 Works by turning on and off the alpha blend mode while adding new figures.
 
 ![Combined functions](images/triangle.png)
